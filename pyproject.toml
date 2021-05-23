@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "py-timethis"
+version = "0.1.0"
+description = "Timeit, but with a friendly syntax."
+authors = ["Abhinav Omprakash"]
+license="BSD-3-Clause"
+readme="README.md"
+homepage="https://github.com/AbhinavOmprakash/py-htminify"
+repository="https://github.com/AbhinavOmprakash/py-htminify"
+keywords=["html", "django","flask","wsgi", "middleware"]
+include=[
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+htminify = "^0.1.2"
+
+[tool.poetry.dev-dependencies]
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
