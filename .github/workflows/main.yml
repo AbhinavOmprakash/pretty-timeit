@@ -32,10 +32,11 @@ jobs:
       - name: Install poetry
         run: pip install poetry
         
-      - name: Install dependencies and activate virtual environment.
-        run: |
-          poetry install
-          poetry shell
+      - name: Install dependencies.
+        run: poetry install
+      
+      - name: activate virtual environment.
+        run: poetry install
         
       - name: run tests
         run: pytest tests
