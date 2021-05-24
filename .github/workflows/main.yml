@@ -36,7 +36,7 @@ jobs:
         run: poetry install
       
       - name: activate virtual environment.
-        run: poetry install
+        run: poetry shell
         
       - name: run tests
         run: pytest tests
