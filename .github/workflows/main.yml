@@ -32,8 +32,20 @@ jobs:
       - name: Install poetry
         run: pip install poetry
         
-      - name: Install dependencies
+      - name: Install dependencies.
         run: poetry install
+
+      - name: Generate coverage report
+        run: poetry run pytest --cov ptimeit --cov-report=xml
         
-      - name: run tests
-        run: pytest tests
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+#           files: ./coverage1.xml,./coverage2.xml
+#           directory: ./coverage/reports/
+#           flags: unittests
+#           name: codecov-umbrella
+# #           fail_ci_if_error: true
+#           path_to_write_report: ./coverage/codecov_report.txt
+# #           verbose: true
