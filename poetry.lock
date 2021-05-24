@@ -1,7 +1,7 @@
 [[package]]
-name = "htminify"
-version = "0.1.2"
-description = "A lightweight html minifier for all Python web frameworks and WSGI apps."
+name = "p-timeit"
+version = "0.1.0"
+description = "A prettier timeit."
 category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
@@ -11,8 +11,4 @@ lock-version = "1.1"
 python-versions = "^3.6"
 content-hash = "c58e9e89e42b77d12fed82c0c1bd8a108d3335def7f86dfcbcabcdead8b091b1"
 
-[metadata.files]
-htminify = [
-    {file = "htminify-0.1.2-py3-none-any.whl", hash = "sha256:c53c577a4c20045f592a221f7481c8af21fd31cde6c07e9ce99bc2d4e27da59d"},
-    {file = "htminify-0.1.2.tar.gz", hash = "sha256:6f3bd5ea631010316e2457f896e2854fd8fdcb9332d855bcf91c961871b9ff8c"},
-]
+

@@ -1,20 +1,19 @@
 [tool.poetry]
-name = "py-timethis"
+name = "p-timeit"
 version = "0.1.0"
-description = "Timeit, but with a friendly syntax."
+description = "A prettier timeit."
 authors = ["Abhinav Omprakash"]
 license="BSD-3-Clause"
 readme="README.md"
 homepage="https://github.com/AbhinavOmprakash/py-htminify"
 repository="https://github.com/AbhinavOmprakash/py-htminify"
-keywords=["html", "django","flask","wsgi", "middleware"]
+keywords=["Timer", "timeit"]
 include=[
     "LICENSE",
 ]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-htminify = "^0.1.2"
 
 [tool.poetry.dev-dependencies]
 
