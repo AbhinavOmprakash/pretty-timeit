@@ -2,11 +2,11 @@
 ***A prettier timeit.***   
 
 ## Why did I write this?
-timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, less-verbose syntax.   
+timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, and more intuitive syntax.   
 Under the hood, I take the same approach as timeit does-
 - Everything is imported once.
 - The garbage collector is disabled when the function is run.
-- 1 million is the default number of times the loop repeats.
+- By default the function runs 1 milllion times.
 
 ## Installation
 
@@ -61,13 +61,13 @@ Keyword arguments must be passed as a dictionary inside the list.
 @timethis( [10, {"second_count_up_to":10}] )
 def function_to_be_timed(count_up_to, second_count_up_to=100):
     lst = [i for i in range(count_up_to)]
-    lst2 = [i for i in range(count_up_to)]
+    lst2 = [i for i in range(second_count_up_to)]
 
 Timer.run()
 ```
 
 ### adding custom descriptive names to your functions
-If you want to see a different name other than the function name in the final report you can pass that to the decorator using using `name=""` argument.
+If you want to see a different name other than the function name in the final report you can pass that to the decorator using `name=""` argument.
 ```Python
 @timethis([10], name="A list comprehension that counts up to 10")
 def function_to_be_timed(count_up_to):
@@ -85,7 +85,7 @@ By default, like timeit, The function is repeated 1 million times,
 but this can be changed by passing a `repeat=` to `Timer.run()` like this.
 
 ```Python
-Timer.run(repeat=100) #The function to be timed will be loop for hundred times.
+Timer.run(repeat=100) #The function to be timed will loop for hundred times.
 ```
 
 ### comparing functions.
