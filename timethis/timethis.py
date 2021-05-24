@@ -5,7 +5,7 @@ import itertools
 import gc
 import time
 
-from helpers import StoredFunction
+from .helpers import StoredFunction
 
 class Timer:
     """Class that handles executing the stored functions and timing them.
@@ -22,7 +22,7 @@ class Timer:
     exec_time = {}
 
     @staticmethod
-    def start(repeat=1000000, compare=False, print_results=True):
+    def run(repeat=1000000, compare=False, print_results=True):
         """calls the _timeit method on stored functions and returns/prints a report.
 
         Args:
@@ -100,6 +100,9 @@ def timethis(params:list=None, name:str=None):
             defaults to the name of the function.
 
     """
+    if not isinstance(params, list):
+        raise TypeError(f"Expected a list but got {type(params).__name__}. Did you forget To put the arguments in the list?")
+
     def inner_decorator(func):
         f = StoredFunction(func, params, name)
         Timer.functions_to_be_timed.append(f)
@@ -111,11 +114,11 @@ def timethis(params:list=None, name:str=None):
 
     return inner_decorator
 
-@timethis()
-def my_func():
-    l = [i for i in range(100)]
+# @timethis()
+# def my_func():
+#     l = [i for i in range(100)]
 
-@timethis()
-def my_func2():
-    l = [i for i in range(10)]
-Timer.start(10000,compare=True)
+# @timethis()
+# def my_func2():
+#     l = [i for i in range(10)]
+# Timer.run(10000,compare=True)
