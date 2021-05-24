@@ -1,10 +1,9 @@
 from typing import Callable
-import re
 
 class StoredFunction:
     """Class that is used to store a function, its arguments, and a name.
         """
-    def __init__(self, function:Callable, arguments:list, name:list):
+    def __init__(self, function:Callable, arguments:list, name:str):
         """inits a StoredFunction Class.
         
         Args:
@@ -17,20 +16,16 @@ class StoredFunction:
         self.name = self._create_name(name)
         
     def _get_args(self, arguments):
-        if arguments:
-            if isinstance(arguments[-1], dict):
-                return arguments[:-1]
-            else:
-                return arguments
-        else:
+        if arguments and isinstance(arguments[-1], dict):
+            return arguments[:-1]
+        elif not arguments:
             return []
+        else:
+            return arguments
 
     def _get_kwargs(self, arguments):
-        if arguments:
-            if isinstance(arguments[-1], dict):
-                return arguments[-1]
-            else:
-                return {}
+        if arguments and isinstance(arguments[-1], dict):
+            return arguments[-1]
         else:
             return {}
 
@@ -44,9 +39,6 @@ class StoredFunction:
         Defaults to my_func
         """
         if not name:
-            # Extract name from function representation
-            # <function my_func at 0x00000190CC976160> -> my_func
-            match = re.search(r"(?<=<function )[\w]+?(?= at)", str(self.function))
-            return match.group(0)
+            return self.function.__name__
         else:
             return name
