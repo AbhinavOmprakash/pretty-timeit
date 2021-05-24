@@ -1,4 +1,6 @@
 # p-timeit
+[![codecov](https://codecov.io/gh/AbhinavOmprakash/p-timeit/branch/main/graph/badge.svg?token=QCRpIcv84o)](https://codecov.io/gh/AbhinavOmprakash/p-timeit)
+
 ***A prettier timeit.***   
 
 ## Why did I write this?
