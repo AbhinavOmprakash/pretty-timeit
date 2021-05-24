@@ -5,15 +5,21 @@ description = "A prettier timeit."
 authors = ["Abhinav Omprakash"]
 license="BSD-3-Clause"
 readme="README.md"
-homepage="https://github.com/AbhinavOmprakash/py-htminify"
-repository="https://github.com/AbhinavOmprakash/py-htminify"
+homepage="https://github.com/AbhinavOmprakash/py-timethis"
+repository="https://github.com/AbhinavOmprakash/py-timethis"
 keywords=["Timer", "timeit"]
 include=[
     "LICENSE",
 ]
+packages = [
+    {include = "ptimeit"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
+pytest = "^6.2.4"
+pytest-cov = "^2.12.0"
+coverage = "^5.5"
 
 [tool.poetry.dev-dependencies]
 
