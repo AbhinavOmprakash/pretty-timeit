@@ -103,6 +103,10 @@ def timethis(params:list=None, name:str=None):
     if not isinstance(params, list):
         raise TypeError(f"Expected a list but got {type(params).__name__}. Did you forget To put the arguments in the list?")
 
+    if isinstance(name, dict):
+        # in case the user does not put the dictionary inside params
+        raise TypeError(f"Expected a string but got {type(params).__name__}. Did you forget to put the dictionary of Keyword arguments inside the list?")
+
     def inner_decorator(func):
         f = StoredFunction(func, params, name)
         Timer.functions_to_be_timed.append(f)
