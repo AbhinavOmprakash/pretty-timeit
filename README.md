@@ -1,7 +1,7 @@
-# p-timeit
+# ptimeit
 [![codecov](https://codecov.io/gh/AbhinavOmprakash/p-timeit/branch/main/graph/badge.svg?token=QCRpIcv84o)](https://codecov.io/gh/AbhinavOmprakash/p-timeit)
 
-***A prettier timeit.***   
+***Pretty timeit.***   
 
 ## Why did I write this?
 timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, and more intuitive syntax.   
@@ -15,13 +15,13 @@ Under the hood, I take the same approach as timeit does-
 With pip.
 
 ```Bash
-$ pip install p-timeit
+$ pip install ptimeit
 ```
 
 With poetry.
 
 ```Bash
-$ poetry add p-timeit
+$ poetry add ptimeit
 ```
 
 ## Usage.

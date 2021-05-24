@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "p-timeit"
+name = "ptimeit"
 version = "0.1.0"
-description = "A prettier timeit."
+description = "Pretty timeit."
 authors = ["Abhinav Omprakash"]
 license="BSD-3-Clause"
 readme="README.md"
