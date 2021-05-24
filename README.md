@@ -1,15 +1,12 @@
 # p-timeit
 ***A prettier timeit.***   
 
-
 ## Why did I write this?
-timeit is a great module, but whenever I wanted to use it, I had to look up the syntax every time, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, less-verbose syntax.   
+timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, less-verbose syntax.   
 Under the hood, I take the same approach as timeit does-
 - Everything is imported once.
 - The garbage collector is disabled when the function is run.
-- 1 million is the default number of times the loop repeats
-
-
+- 1 million is the default number of times the loop repeats.
 
 ## Installation
 
@@ -32,6 +29,8 @@ All arguments, including keyword arguments must be passed in a list.
 
 ```Python
 from ptimeit import timethis, Timer
+
+# although this is a decorator, your original function will not be modified.
 @timethis() 
 def function_to_be_timed():
     lst = [i for i in range(10)]
@@ -69,6 +68,12 @@ Timer.run()
 
 ### adding custom descriptive names to your functions
 If you want to see a different name other than the function name in the final report you can pass that to the decorator using using `name=""` argument.
+```Python
+@timethis([10], name="A list comprehension that counts up to 10")
+def function_to_be_timed(count_up_to):
+    lst = [i for i in range(count_up_to)]
+Timer.run()
+```
 
 ```Console
 name                                      | Execution time
@@ -84,12 +89,10 @@ Timer.run(repeat=100) #The function to be timed will be loop for hundred times.
 ```
 
 ### comparing functions.
-A common use case I have found when I'm using the timeit module, is to compare
+A common use case that I have found for the timeit module, is to compare
 the runtime speed of two different algorithms, this is very easy to do in p-timeit.
 
 ```Python
-from timethis.timethis import timethis, Timer
-
 @timethis(100, name="using a for loop")
 def my_func(count_up_to):
     lst=[]
@@ -110,8 +113,8 @@ rank | name                       | Execution time
 ```
 As you can see the list comprehension is faster than using a for loop.
 
-Note: you can compare as many functions as you like. 
-The `compare=True` Flag formats the output, And orders the results from The fastest functions to the slowest.
+Note: you can compare as many functions as you like. Not just two.
+The `compare=True` flag formats the output, And orders the results from The fastest functions to the slowest.
 You can still run multiple functions with `Timer.run()`.
 
 Here's an example without compare
@@ -141,5 +144,5 @@ using a for loop           | 0.7021932000000001
 using a List comprehension | 0.6186622999999999
 using two lists            | 1.0627897000000002
 ```
-Note that the functions are ordered as they were defined
+Notice that the functions are ordered as they were defined
 and not by execution time.
