@@ -1,5 +1,5 @@
 # ptimeit
-[![codecov](https://codecov.io/gh/AbhinavOmprakash/p-timeit/branch/main/graph/badge.svg?token=QCRpIcv84o)](https://codecov.io/gh/AbhinavOmprakash/p-timeit)
+[![codecov](https://codecov.io/gh/AbhinavOmprakash/ptimeit/branch/main/graph/badge.svg?token=QCRpIcv84o)](https://codecov.io/gh/AbhinavOmprakash/ptimeit)
 
 ***Pretty timeit.***   
 
