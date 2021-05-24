@@ -1,3 +1,3 @@
-from .timethis import timethis, Timer
+from .ptimeit import timethis, Timer
 
-del timethis
+del ptimeit
