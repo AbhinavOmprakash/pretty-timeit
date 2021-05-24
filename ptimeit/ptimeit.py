@@ -1,9 +1,7 @@
-"""
-
-"""
 import itertools
 import gc
 import time
+from functools import wraps
 
 from .helpers import StoredFunction
 
@@ -42,7 +40,7 @@ class Timer:
         if print_results:
             print(Timer._format_report(compare))
         else:
-            return Timer.exec_time
+            return Timer._format_report(compare)
 
     @staticmethod
     def _timeit(repeat, stored_func):
@@ -100,7 +98,7 @@ def timethis(params:list=None, name:str=None):
             defaults to the name of the function.
 
     """
-    if not isinstance(params, list):
+    if params and not isinstance(params, list):
         raise TypeError(f"Expected a list but got {type(params).__name__}. Did you forget To put the arguments in the list?")
 
     if isinstance(name, dict):
@@ -111,18 +109,10 @@ def timethis(params:list=None, name:str=None):
         f = StoredFunction(func, params, name)
         Timer.functions_to_be_timed.append(f)
 
+        @wraps(func)
         def wrapped(*args, **kwargs):
-            return func
+            return func(*args, **kwargs)
 
         return wrapped    
 
     return inner_decorator
-
-# @timethis()
-# def my_func():
-#     l = [i for i in range(100)]
-
-# @timethis()
-# def my_func2():
-#     l = [i for i in range(10)]
-# Timer.run(10000,compare=True)
