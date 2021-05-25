@@ -4,7 +4,7 @@
 ***Pretty timeit.***   
 
 ## Why did I write this?
-timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had the similar functionality of timeit but had an easier, and more intuitive syntax.   
+timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. So I wanted something that had similar functionality of timeit but had an easier, and more intuitive syntax.   
 Under the hood, I take the same approach as timeit does-
 - Everything is imported once.
 - The garbage collector is disabled when the function is run.
@@ -27,7 +27,6 @@ $ poetry add ptimeit
 ## Usage.
 
 ### A simple example.
-All arguments, including keyword arguments must be passed in a list.
 
 ```Python
 from ptimeit import timethis, Timer
@@ -54,13 +53,13 @@ Timer.run(print_results=False) # returns a string
 
 
 ### Mixing positional arguments with keyword arguments.
-Keyword arguments must be passed as a dictionary inside the list.
+Positional Arguments must be passed inside a list even if there is one argument.
+Keyword arguments must be passed inside a dictionary. 
+Note the order follows the common idiom of `function(*args, **kwargs)`.
 
 ```Python
-# DO NOT do this -> @timethis( [10], {"second_count_up_to":10} ) 
 
-# DO this 
-@timethis( [10, {"second_count_up_to":10}] )
+@timethis( [10], {"second_count_up_to":10} )
 def function_to_be_timed(count_up_to, second_count_up_to=100):
     lst = [i for i in range(count_up_to)]
     lst2 = [i for i in range(second_count_up_to)]
