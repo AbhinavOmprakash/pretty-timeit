@@ -53,12 +53,11 @@ Timer.run(print_results=False) # returns a string
 
 
 ### Mixing positional arguments with keyword arguments.
-Positional Arguments must be passed inside a list even if there is one argument.
-Keyword arguments must be passed inside a dictionary. 
+Positional Arguments must be passed inside a list even if there is one argument.  
+Keyword arguments must be passed inside a dictionary.   
 Note the order follows the common idiom of `function(*args, **kwargs)`.
 
 ```Python
-
 @timethis( [10], {"second_count_up_to":10} )
 def function_to_be_timed(count_up_to, second_count_up_to=100):
     lst = [i for i in range(count_up_to)]
