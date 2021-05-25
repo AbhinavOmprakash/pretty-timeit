@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "ptimeit"
+name = "pretty-timeit"
 version = "0.1.0"
-description = "Pretty timeit."
+description = "timeit, but with the interface it should have had."
 authors = ["Abhinav Omprakash"]
 license="BSD-3-Clause"
 readme="README.md"
-homepage="https://github.com/AbhinavOmprakash/p-timeit"
-repository="https://github.com/AbhinavOmprakash/p-timeit"
+homepage="https://github.com/AbhinavOmprakash/pretty-timeit"
+repository="https://github.com/AbhinavOmprakash/pretty-timeit"
 keywords=["Timer", "timeit"]
 include=[
     "LICENSE",
@@ -17,6 +17,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6.2"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
