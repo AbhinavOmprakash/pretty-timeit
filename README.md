@@ -1,7 +1,7 @@
 # ptimeit
 [![codecov](https://codecov.io/gh/AbhinavOmprakash/pretty-timeit/branch/main/graph/badge.svg?token=QCRpIcv84o)](https://codecov.io/gh/AbhinavOmprakash/pretty-timeit)
 
-***timeit, but with the interface it should have had.***   
+***timeit, but with a decorator interface.***   
 
 ## Why did I write this?
 timeit is a great module, but whenever I wanted to use it, I had to look up the syntax, and even after that it was tricky to get things working. I wanted something that had the similar functionality of timeit but an easier, more intuitive syntax.   
